@@ -1,6 +1,6 @@
 # 🐍 Snake Game - README
 
-![Snake Game Screenshot](https://screenshot-of-snake-game.png) *[Screenshot placeholder - you can add one later]*
+![Snake Game Screenshot](https://github.com/Jerhan28/snake-game/blob/main/screenshot-of-snake-game.png) *[Screenshot placeholder - you can add one later]*
 
 ## 📝 Description
 A modern, responsive Snake game built with HTML5, CSS3, and JavaScript. Features smooth animations, customizable settings, and a sleek dark blue theme.
