@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="settings-btn" id="settingsBtn">⚙️</div>
+  
+  <div class="overlay" id="settingsOverlay"></div>
+  
+  <div class="settings-panel" id="settingsPanel">
+    <div class="settings-header">
+      <h2>Game Settings</h2>
+      <button class="close-settings" id="closeSettings">&times;</button>
+    </div>
+    
+    <div class="setting-group">
+      <h3>Game Options</h3>
+      <div class="setting-option">
+        <label for="wallToggle">Walls</label>
+        <label class="toggle-switch">
+          <input type="checkbox" id="wallToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="setting-option">
+        <label for="growthToggle">Tail Growth</label>
+        <label class="toggle-switch">
+          <input type="checkbox" id="growthToggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="setting-group">
+      <h3>Difficulty</h3>
+      <div class="setting-option">
+        <label for="speedSelect">Game Speed</label>
+        <select id="speedSelect">
+          <option value="6">Slow</option>
+          <option value="10" selected>Medium</option>
+          <option value="15">Fast</option>
+          <option value="20">Very Fast</option>
+        </select>
+      </div>
+      <div class="setting-option">
+        <label for="gridSelect">Grid Size</label>
+        <select id="gridSelect">
+          <option value="15">Small (15x15)</option>
+          <option value="20" selected>Medium (20x20)</option>
+          <option value="25">Large (25x25)</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="setting-group">
+      <h3>Controls</h3>
+      <div class="setting-option">
+        <label for="keyboardToggle">Keyboard Controls</label>
+        <label class="toggle-switch">
+          <input type="checkbox" id="keyboardToggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="setting-group">
+      <button class="control-btn" style="width: 100%; border-radius: 5px; margin-top: 20px;" onclick="Snake.reset()">Reset Game</button>
+      <button class="control-btn" style="width: 100%; border-radius: 5px; margin-top: 10px; background: rgba(255, 50, 50, 0.2); border-color: #ff3232; color: #ff3232;" onclick="Snake.clearTopScore()">Reset High Score</button>
+    </div>
+  </div>
+
+  <div class="game-header">
+    <h1>Snake Game</h1>
+  </div>
+  
+  <div class="game-container">
+    <canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
+    
+    <div class="game-over" id="gameOver">
+      <h2>GAME OVER</h2>
+      <p id="gameOverMessage">You hit the wall!</p>
+      <button class="restart-btn" onclick="Snake.reset()">Play Again</button>
+    </div>
+    
+    <div class="game-controls">
+      <div class="score-display">
+        <div id="current-score">Score: 0</div>
+        <div id="high-score">High Score: 0</div>
+      </div>
+      
+      <div class="controls-row">
+        <div class="control-btn" onclick="Snake.action('up')">↑</div>
+      </div>
+      <div class="controls-row">
+        <div class="control-btn" onclick="Snake.action('left')">←</div>
+        <div class="control-btn" onclick="Snake.action('down')">↓</div>
+        <div class="control-btn" onclick="Snake.action('right')">→</div>
+      </div>
+      <div class="controls-row">
+        <div class="control-btn" onclick="Snake.pause()" style="width: 120px; border-radius: 30px;">Pause</div>
+        <div class="control-btn" onclick="Snake.reset()" style="width: 120px; border-radius: 30px;">Reset</div>
+      </div>
+    </div>
+    
+    <div class="game-instructions">
+      &copy; 2025 Jerhan. All rights reserved.
+    </div>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
