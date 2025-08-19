@@ -53,7 +53,7 @@ The game can be easily customized by modifying:
 - Game mechanics in the JavaScript
 - Grid sizes and speeds in the settings
 
-## 🙏 Credits
+## 🤓 Credits
 Developed by [ Jerhan T. Bartasan ] using vanilla JavaScript.
 
 ---
